@@ -18,16 +18,13 @@ export class ServerApp {
         this.port = port;
         this.app.use(express.json());
         this.app.use(cors({
-            // origin: 'http://localhost:5173', // Origen específico permitido
-            // credentials: true // 
+            origin: 'http://localhost:5173', // Origen específico permitido
+            credentials: true // 
         }));
 
-        this.app.use(express.static(path.join(__dirname , "dist")))
         this.app.use(cookieParser());
         this.app.use(routes);
-        this.app.get("/" , (req : Request ,res : Response)  => {
-            res.sendFile(path.join(__dirname,"./dist/index.html"))
-        })
+       
     }
 
     start() {
