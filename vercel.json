@@ -1,16 +1,21 @@
 { 
 
     "version": 2,
-    "rewrites" : [{"source" : "./src/(.*)" , "destination": "app.ts"}],
+    
     "builds": [
       {
         "src": "./src/app.ts",
         "use": "@vercel/node",
         "config": {
-          "includeFiles": ["src/route/**/*"]
+          "includeFiles": ["src/routes/**/*"]
         }
       }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "app.ts"
+      }
     ]
-    
   }
   
