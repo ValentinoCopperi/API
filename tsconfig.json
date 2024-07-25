@@ -1,5 +1,5 @@
 {
-    "compilerOptions": {
+  "compilerOptions": {
       "module": "commonjs",
       "target": "es6",
       "strict": true,
@@ -7,9 +7,8 @@
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "outDir": "./dist",
-      "rootDir": "./src",
+      "rootDir": "./", // Cambiar rootDir para incluir la raíz del proyecto
       "resolveJsonModule": true
-    },
-    "include": ["src/**/*.ts", "src/types/**/*.d.ts", "app.ts"]
-  }
-  
+  },
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts", "app.ts"]
+}
