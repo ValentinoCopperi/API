@@ -17,8 +17,8 @@ export class ServerApp {
         this.port = port;
         this.app.use(express.json());
         this.app.use(cors({
-            origin: 'http://localhost:5173', // Origen específico permitido
-            credentials: true // 
+            // origin: 'http://localhost:5173', // Origen específico permitido
+            // credentials: true // 
         }));
         this.app.use(cookieParser());
         this.app.use(routes);
