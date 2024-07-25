@@ -10,12 +10,7 @@
           "includeFiles": ["src/route/**/*"]
         }
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app.ts"
-      }
     ]
+    
   }
   
