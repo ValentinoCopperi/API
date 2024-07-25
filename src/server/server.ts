@@ -1,5 +1,6 @@
 import express , {type Router , type Express} from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 interface ServerOptions {
     port : number ;
     routes : Router;
@@ -14,8 +15,12 @@ export class ServerApp {
 
         this.app = express();
         this.port = port;
-        this.app.use(express.json())
-        this.app.use(cors())
+        this.app.use(express.json());
+        this.app.use(cors({
+            origin: 'http://localhost:5173', // Origen específico permitido
+            credentials: true // 
+        }));
+        this.app.use(cookieParser());
         this.app.use(routes);
     }
 
