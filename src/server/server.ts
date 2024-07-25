@@ -1,6 +1,7 @@
-import express , {type Router , type Express} from 'express';
+import express , {type Router , type Express, Request, Response} from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 interface ServerOptions {
     port : number ;
     routes : Router;
@@ -20,8 +21,13 @@ export class ServerApp {
             // origin: 'http://localhost:5173', // Origen específico permitido
             // credentials: true // 
         }));
+
+        this.app.use(express.static(path.join(__dirname , "dist")))
         this.app.use(cookieParser());
         this.app.use(routes);
+        this.app.get("/" , (req : Request ,res : Response)  => {
+            res.sendFile(path.join(__dirname,"./dist/index.html"))
+        })
     }
 
     start() {

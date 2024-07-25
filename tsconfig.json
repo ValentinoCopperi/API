@@ -6,7 +6,7 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
-      "outDir": "./dist",
+      "outDir": "src/dist",
       "rootDir": "./src", // Cambiar rootDir para incluir la raíz del proyecto
       "resolveJsonModule": true
   },
