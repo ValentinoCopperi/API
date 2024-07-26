@@ -1,5 +1,5 @@
-import { AppRoutes } from "./routes/app.routes";
-import { ServerApp } from "./server/server";
+import { AppRoutes } from "./src/routes/app.routes";
+import { ServerApp } from "./src/server/server";
 
 (() => {
     main();
