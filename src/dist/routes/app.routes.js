@@ -10,11 +10,11 @@ const users_routes_1 = require("./users/users.routes");
 class AppRoutes {
     static get routes() {
         const routes = (0, express_1.Router)();
-        routes.use("/products", products_routes_1.ProductsRoutes.routes);
-        routes.use("/category", category_routes_1.CategoryRoutes.routes);
-        routes.use("/brands", brands_routes_1.BrandsRoutes.routes);
-        routes.use("/users", users_routes_1.UsersRoutes.routes);
-        routes.use("/auth", auth_routes_1.AuthRoutes.routes);
+        routes.use("/api/products", products_routes_1.ProductsRoutes.routes);
+        routes.use("/api/category", category_routes_1.CategoryRoutes.routes);
+        routes.use("/api/brands", brands_routes_1.BrandsRoutes.routes);
+        routes.use("/api/users", users_routes_1.UsersRoutes.routes);
+        routes.use("/api/auth", auth_routes_1.AuthRoutes.routes);
         return routes;
     }
 }
