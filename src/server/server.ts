@@ -1,5 +1,5 @@
 import express , {type Router , type Express, Request, Response} from 'express';
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 interface ServerOptions {
@@ -14,13 +14,26 @@ export class ServerApp {
     constructor (options : ServerOptions) {
         const { port , routes } = options;
 
+        const allowedOrigins = [
+            'https://sky-level-frontend-react.vercel.app',
+            'http://localhost:5173'
+        ];
+
+        const corsOptions: CorsOptions = {
+            origin: (origin, callback) => {
+                if (!origin || allowedOrigins.includes(origin)) {
+                    callback(null, true);
+                } else {
+                    callback(new Error('Not allowed by CORS'));
+                }
+            },
+            credentials: true
+        };
+
         this.app = express();
         this.port = port;
         this.app.use(express.json());
-        this.app.use(cors({
-            origin:'https://sky-level-frontend-react.vercel.app' || 'http://localhost:5173',
-            credentials: true // 
-        }));
+        this.app.use(cors(corsOptions));
 
         this.app.use(cookieParser());
         this.app.use(routes);
