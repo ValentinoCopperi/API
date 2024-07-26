@@ -7,7 +7,7 @@
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "outDir": "src/dist",
-      "rootDir": "./src", // Cambiar rootDir para incluir la raíz del proyecto
+      "rootDir": "./", // Cambiar rootDir para incluir la raíz del proyecto
       "resolveJsonModule": true
   },
   "include": ["src/**/*.ts", "src/types/**/*.d.ts", "app.ts"]
