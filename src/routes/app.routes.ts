@@ -12,11 +12,11 @@ export class AppRoutes {
 
         const routes = Router();
 
-        routes.use("/products" , ProductsRoutes.routes);
-        routes.use("/category" , CategoryRoutes.routes);
-        routes.use("/brands" , BrandsRoutes.routes);
-        routes.use("/users" , UsersRoutes.routes);
-         routes.use("/auth" , AuthRoutes.routes)
+        routes.use("/api/products" , ProductsRoutes.routes);
+        routes.use("/api/category" , CategoryRoutes.routes);
+        routes.use("/api/brands" , BrandsRoutes.routes);
+        routes.use("/api/users" , UsersRoutes.routes);
+         routes.use("/api/auth" , AuthRoutes.routes)
 
         return routes;
 
