@@ -67,7 +67,8 @@ class AuthController {
                 // Establecer el token en una cookie segura
                 res.cookie('token_skylevel', token, {
                     httpOnly: true, // Previene el acceso desde JavaScript
-                    sameSite: 'lax', // Previene ataques CSRF
+                    sameSite: 'strict', 
+                    secure: process.env.NODE_ENV === 'production',// Previene ataques CSRF
                     maxAge: 3600000 // 1 hora en milisegundos
                 });
                 return res.status(200).json({ msg: "Welcome " + email, user: { email: user.email, name: user.name, role: user.id_role, phone: user.phone } });
