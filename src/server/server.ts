@@ -18,6 +18,7 @@ export class ServerApp {
         this.port = port;
         this.app.use(express.json());
         this.app.use(cors({
+            origin:'https://sky-level-frontend-react.vercel.app',
             credentials: true // 
         }));
 
