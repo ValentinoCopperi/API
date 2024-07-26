@@ -18,7 +18,7 @@ export class ServerApp {
         this.port = port;
         this.app.use(express.json());
         this.app.use(cors({
-            origin: 'http://localhost:5173', // Origen específico permitido
+            origin: 'https://sky-level-frontend-react.vercel.app/', // Origen específico permitido
             credentials: true // 
         }));
 

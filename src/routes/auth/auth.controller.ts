@@ -61,7 +61,7 @@ export class AuthController {
             res.cookie('token_skylevel', token, {
                 httpOnly: true, // Previene el acceso desde JavaScript
                 secure: process.env.NODE_ENV === 'production', // Establece el flag 'Secure' en producción
-                sameSite: 'strict', // Previene ataques CSRF
+                sameSite: 'none', // Previene ataques CSRF
                 maxAge: 3600000 // 1 hora en milisegundos
             });
 
